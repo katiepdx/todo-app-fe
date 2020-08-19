@@ -1,3 +1,11 @@
+.signup-form {
+  display: block;
+}
+
+.welcome-button {
+  
+}
+
 @media (min-width: 400px) {
   .App {
     text-align: center;
