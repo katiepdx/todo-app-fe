@@ -31,7 +31,7 @@ export default class ListAllTodosPage extends Component {
                     this.state.todos.map((todo) => {
                         return <div className="todo-tile">
                             <p>Task: {todo.todo}</p>
-                            <p>Completed: {todo.completed}</p>
+                            <p>Completed: {todo.complete ? 'Yes' : 'No'}</p>
                         </div>
                     })
                 }
