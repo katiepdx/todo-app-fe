@@ -8,7 +8,7 @@ export function signUpUser(userData) {
         // make POST req to signup endpoint and send the userData
         return request.post(`${URL}/auth/signup`, userData)
     } catch(e) {
-        throw { error: e.message }
+        return { error: e.message }
     }
 }
 
@@ -18,6 +18,22 @@ export function signInUser(userData) {
         // make POST req to signin endpoint and send the userData
         return request.post(`${URL}/auth/signin`, userData)
     } catch(e) {
-        throw { error: e.message }
+        return { error: e.message }
+    }
+}
+
+// fetch all of users todos function
+export function fetchTodos() {
+    // get token from localStorage 
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            // make GET req to todos endpoint 
+            .get(`${URL}/api/todos`, token)
+            // send Authorization 
+            .set('Authorization', token);
+    } catch(e) {
+        return { error: e.message }
     }
 }

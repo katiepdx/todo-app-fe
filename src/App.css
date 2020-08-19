@@ -1,9 +1,15 @@
-.signup-form {
-  display: block;
+.all-todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4%;
 }
 
-.welcome-button {
-  
+.todo-tile {
+  border: 2px solid rgba(197, 71, 144, 0.541);
+  width: 30vw;
+  border-radius: 3px;
+  margin: 4px;
 }
 
 @media (min-width: 400px) {

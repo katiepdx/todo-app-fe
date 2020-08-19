@@ -29,6 +29,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('App.js TOKEN', this.state.token)
     return (
       <div className="App">
         {/* Nav bar links go here */}
@@ -66,13 +67,13 @@ export default class App extends Component {
             <Route
               path="/todos"
               exact
-              render={(routerProps) => <ListAllTodosPage handleToken={this.handleToken} {...routerProps} />} 
+              render={(routerProps) => <ListAllTodosPage token={this.state.token} handleToken={this.handleToken} {...routerProps} />} 
             />
             {/* add an entry page route */}
             <Route
               path="/create"
               exact
-              render={(routerProps) => <CreateTodoPage handleToken={this.handleToken} {...routerProps} />} 
+              render={(routerProps) => <CreateTodoPage token={this.state.token} handleToken={this.handleToken} {...routerProps} />} 
             />
 
           </Switch>
