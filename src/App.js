@@ -36,9 +36,16 @@ export default class App extends Component {
           <div className="nav-bar">
             <div className="nav-links">
               <Link to='/'>Home Page</Link>
-              <Link to='/auth'>Auth Page</Link>
-              <Link to='/todos'>My Todos</Link>
-              <Link to='/create'>Create Todo</Link>
+              
+              {/* display these navlinks if token exists */}
+              {
+                this.state.token && 
+                <div>
+                  <Link to='/auth'>Auth Page</Link>
+                  <Link to='/todos'>My Todos</Link>
+                  <Link to='/create'>Create Todo</Link>
+                </div>
+              }
             </div>
           </div>
 
