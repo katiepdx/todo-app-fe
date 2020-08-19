@@ -37,3 +37,19 @@ export function fetchTodos() {
         return { error: e.message }
     }
 }
+
+// create one todo
+export function createOneTodo(todoData) {
+    // get token from localStorage 
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            // make POST req to todos endpoint 
+            .post(`${URL}/api/todos`, todoData)
+            // send Authorization 
+            .set('Authorization', token);
+    } catch(e) {
+        return { error: e.message }
+    }
+}
