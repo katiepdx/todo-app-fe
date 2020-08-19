@@ -53,19 +53,19 @@ export default class App extends Component {
             <Route
               path="/auth"
               exact
-              render={(routerProps) => <AuthPage {...routerProps} />} 
+              render={(routerProps) => <AuthPage handleToken={this.handleToken} {...routerProps} />} 
             />
             {/* list page route */}
             <Route
               path="/todos"
               exact
-              render={(routerProps) => <ListAllTodosPage {...routerProps} />} 
+              render={(routerProps) => <ListAllTodosPage handleToken={this.handleToken} {...routerProps} />} 
             />
             {/* add an entry page route */}
             <Route
               path="/create"
               exact
-              render={(routerProps) => <CreateTodoPage {...routerProps} />} 
+              render={(routerProps) => <CreateTodoPage handleToken={this.handleToken} {...routerProps} />} 
             />
 
           </Switch>

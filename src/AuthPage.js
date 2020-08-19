@@ -54,6 +54,7 @@ export default class AuthPage extends Component {
             email: this.state.signInEmail,
             password: this.state.signInPassword
         })
+        console.log(user);
 
         // pass received user token and set to state and localStorage
         this.props.handleToken(user.body.token)
