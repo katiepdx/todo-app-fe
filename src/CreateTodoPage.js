@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createOneTodo, fetchTodos } from './todos-api.js';
+import { createOneTodo, fetchTodos, completeOneTodo } from './todos-api.js';
 
 export default class CreateTodoPage extends Component {
     // set state for todos
@@ -48,6 +48,24 @@ export default class CreateTodoPage extends Component {
             return { error: e.message }
         }
     }
+    handleCompletedChange = async (id, todo) => {
+        try {
+            await completeOneTodo(id, {
+                todo: todo.todo,
+                completed: true
+            });
+
+            const data = await fetchTodos(this.props.token);
+
+            // update state with updated todo list
+            this.setState({
+                todos: data.body
+            })
+
+        } catch(e) {
+            return { error: e.message }
+        }
+    }
 
     render() {
         return (
@@ -64,7 +82,7 @@ export default class CreateTodoPage extends Component {
                     <h3>Your Todos</h3>
                     {
                     this.state.todos.map((todo) => {
-                        return <div className="todo-tile" key={todo.id}>
+                        return <div className="todo-tile" onClick={() => this.handleCompletedChange(todo.id, todo)} key={todo.id}>
                             <p>Task: {todo.todo}</p>
                             <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
                         </div>

@@ -53,3 +53,19 @@ export function createOneTodo(todoData) {
         return { error: e.message }
     }
 }
+
+// complete (put/update) one todo
+export function completeOneTodo(todoId, updatedTodo) {
+    // get token from localStorage 
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            // make POST req to todos endpoint 
+            .put(`${URL}/api/todos/${todoId}`, updatedTodo)
+            // send Authorization 
+            .set('Authorization', token);
+    } catch(e) {
+        return { error: e.message }
+    }
+}
