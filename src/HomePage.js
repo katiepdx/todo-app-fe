@@ -9,10 +9,12 @@ export default class HomePage extends Component {
     
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleWelcomeButton}>
+            <div className="homepage-container">
+                <form className="homepage" onSubmit={this.handleWelcomeButton}>
                     Welcome! Click the button to go to sign-up/login page.
-                    <button>Let's Go!</button>
+                    <div>
+                       <button>Let's Go!</button>
+                    </div>
                 </form>
             </div>
         )

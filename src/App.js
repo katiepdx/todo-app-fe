@@ -28,6 +28,13 @@ export default class App extends Component {
     localStorage.setItem('token', token)
   }
 
+  clearToken = () => {
+    // clear token from state by setting it to an empty string
+    this.setState({ token: '' });
+
+    localStorage.setItem('token', '')
+  }
+
   render() {
     console.log('App.js TOKEN', this.state.token)
     return (
@@ -42,6 +49,7 @@ export default class App extends Component {
               {
                 this.state.token && 
                 <div>
+                  <Link to='/'><button onClick={this.clearToken}>Sign Out</button></Link>
                   <Link to='/auth'>Auth Page</Link>
                   <Link to='/todos'>My Todos</Link>
                   <Link to='/create'>Create Todo</Link>

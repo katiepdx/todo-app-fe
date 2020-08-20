@@ -1,3 +1,15 @@
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage {
+  padding: 30%;
+  background-color: plum;
+}
+
 .all-todos {
   display: flex;
   flex-direction: column;
