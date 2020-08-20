@@ -64,7 +64,7 @@ export default class CreateTodoPage extends Component {
                     <h3>Your Todos</h3>
                     {
                     this.state.todos.map((todo) => {
-                        return <div className="todo-tile">
+                        return <div className="todo-tile" key={todo.id}>
                             <p>Task: {todo.todo}</p>
                             <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
                         </div>
