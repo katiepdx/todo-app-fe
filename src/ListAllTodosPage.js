@@ -25,7 +25,7 @@ export default class ListAllTodosPage extends Component {
     render() {
         return (
             <div className="all-todos">
-                All Todos
+                <h3>All Todos</h3>
                 {/* map through the todos array and list them to page */}
                 {
                     this.state.todos.map((todo) => {
