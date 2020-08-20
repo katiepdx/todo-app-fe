@@ -10,6 +10,12 @@
   background-color: plum;
 }
 
+.signup-form, .signin-form {
+  border: 3px solid black;
+  margin: 5%;
+  padding-bottom: 5%;
+}
+
 .all-todos {
   display: flex;
   flex-direction: column;

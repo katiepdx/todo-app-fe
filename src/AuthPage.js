@@ -66,29 +66,38 @@ export default class AuthPage extends Component {
     render() {
 
         return (
-            <div>
+            <div classname="auth-page">
                 <form className="signup-form" onSubmit={this.handleSignUpClick}>
-                    Sign Up
+                    <h3>Sign Up</h3>
                     <label>
-                        Email: 
-                        <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail}/>
+                        <div>
+                            Email: 
+                            <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail}/>
+                        </div>
                     </label>
                     <label>
-                        Password: 
-                        <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword}/>
+                        <div>
+                            Password: 
+                            <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword}/>
+                        </div>
                     </label>
 
                     <button>Sign Up!</button>
                 </form>
+
                 <form className="signin-form" onSubmit={this.handleSignInClick}>
-                    Sign In
+                    <h3>Sign In</h3>
                     <label>
-                        Email: 
-                        <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail}/>
+                        <div>
+                            Email: 
+                            <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail}/>
+                        </div>
                     </label>
                     <label>
-                        Password: 
-                        <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword}/>
+                        <div>
+                            Password: 
+                            <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword}/>
+                        </div>
                     </label>
 
                     <button>Sign In!</button>
