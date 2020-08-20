@@ -25,15 +25,25 @@ export default class ListAllTodosPage extends Component {
     render() {
         return (
             <div className="all-todos">
-                <h3>All Todos</h3>
-                {/* map through the todos array and list them to page */}
+                <h3>Your Todos</h3>
                 {
-                    this.state.todos.map((todo) => {
-                        return <div className="todo-tile">
-                            <p>Task: {todo.todo}</p>
-                            <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
+                this.state.todos.map((todo) => {
+                    if(todo.completed === false) {
+                        return <div className="todo-tile not-completed" onClick={() => this.handleCompletedChange(todo.id, todo)} key={todo.id} >
+                            <div>
+                                <p>Task: {todo.todo}</p>
+                                <p>Completed: {todo.completed ? 'Yes': 'No' }</p>
+                            </div>
                         </div>
-                    })
+                    } else {
+                        return <div className="todo-tile yes-completed" onClick={() => this.handleCompletedChange(todo.id, todo)} key={todo.id} >
+                        <div>
+                            <p>Task: {todo.todo}</p>
+                            <p>Completed: {todo.completed ? 'Yes': 'No' }</p>
+                        </div>
+                    </div>
+                    }
+                })
                 }
             </div>
         )
